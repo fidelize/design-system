@@ -231,7 +231,7 @@ gulp.task('patternlab:connect', gulp.series(function (done) {
     server: {
       baseDir: "./"//normalizePath(paths().public.root),
     },
-      port: proccess.end.PORT || 5000,
+      port: process.end.PORT || 5000,
       //host: 'fidelizedesignguidelines.herokuapp.com',
     snippetOptions: {
       // Ignore all HTML files within the templates folder
