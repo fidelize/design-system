@@ -5,5 +5,5 @@
       "title" : "Annotation title",
       "comment": "Annotation description"
     }
-  ],
+  ]
 }
