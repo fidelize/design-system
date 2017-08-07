@@ -229,10 +229,10 @@ function watch() {
 gulp.task('patternlab:connect', gulp.series(function (done) {
   browserSync.init({
     server: {
-      baseDir: normalizePath(paths().public.root),
-      port: 80,
-      host: 'https://fidelizedesignguidelines.herokuapp.com',
+      baseDir: "./"//normalizePath(paths().public.root),
     },
+      port: proccess.end.PORT || 5000,
+      //host: 'fidelizedesignguidelines.herokuapp.com',
     snippetOptions: {
       // Ignore all HTML files within the templates folder
       blacklist: ['/index.html', '/', '/?*']
