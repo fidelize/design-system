@@ -1,0 +1,13 @@
+<p style="text-align: right;"><a class="mdl-button mdl-js-button mdl-button--primary" href="http://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank">Veja os padrões de máscara do jQuery Mask Plugin</a></p>
+
+<!-- Simple Textfield -->
+<form action="{{ url }}">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" id="masked" type="text">
+    <label class="mdl-textfield__label"></label>
+  </div>
+</form>
+
+<script>
+$('#masked').mask("99.999.999/9999-99", {placeholder: "__.___.___/____-__"});
+</script>

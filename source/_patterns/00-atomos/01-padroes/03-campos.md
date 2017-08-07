@@ -1,0 +1,1 @@
+As regras citadas nesta seção fazem parte do DoD da Fidelize

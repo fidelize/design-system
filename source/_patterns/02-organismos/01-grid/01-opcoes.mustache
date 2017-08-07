@@ -1,0 +1,88 @@
+<p><strong>Ativa o botão de exportação em CSV:</strong></p>
+<pre>
+'isExportable' => true,
+</pre>
+<br /><br />
+<p><strong>Ativa o botão de excluir vários:</strong></p>
+<pre>
+$this->widget('fidelize.grid.FGridView', array(
+  .....
+      'columns'=>array(
+          array(
+              'id'             => 'selectedItems',
+              'class'          => 'fidelize.grid.FCheckBoxColumn',
+              'selectableRows' => 2,
+          ),
+      .....
+));
+</pre>
+<br /><br />
+<p><strong>Exportar a grid em XLSX (ao invés de CSV):</strong></p>
+<pre>
+$this->widget('fidelize.grid.FGridView', array(
+    'id' => 'pedido-grid',
+    'isExportable' => true,
+    'exportFileName' => 'DetalhesPedido',
+    'exportType' => 'xlsx', <--
+</pre>
+<br /><br />
+<p><strong>Exibir e ocultar colunas na exportação:</strong></p>
+<pre>
+array(
+    'type' => 'raw',
+    'header' => 'Telefones do Representante',
+    'value' => '$data->vitima->representante_id ? $data->vitima->representante->getTelefonesSeparadosPorVirgula() : null',
+    'exportable' => false, <--
+),
+</pre>
+<br /><br />
+<p><strong>Há casos em que a exportação precisa deixar o valor literal, sem a formatação automática do Excel. Para esses casos, você usa:</strong></p>
+<pre>
+array(
+    'name' => 'medico.agencia',
+    'value' => '$data->medico->agencia',
+    'exportAsString' => true, <--
+),
+</pre>
+<br /><br />
+<p><strong>Para criar novos botões:</strong></p>
+<pre>
+$this->widget('fidelize.grid.FGridView', array(
+  'id'=>'cad-produto-grid',
+  'isExportable' => true,
+  'isEditable' => false,
+  ...
+  'additionalButtons' => array(
+      array(
+          'label' => 'Exportar EANs Alternativos',
+          'onclick' => 'exportarEANAlternativo()',
+      ),
+  ),
+</pre>
+<br /><br />
+<p><strong>Para criar novos botões COM LAYOUT DIFERENCIADO:</strong></p>
+<pre>
+$this->widget('fidelize.grid.FGridView', array(
+  'id'=>'cad-produto-grid',
+  'isExportable' => true,
+  'isEditable' => false,
+  ...
+  'additionalButtons' => array(
+      array(
+          'label' => 'Exportar EANs Alternativos',
+          'onclick' => 'exportarEANAlternativo()',
+          'float' => 'left', //define a posição left/right
+          'buttonClass' => 'btn-success', //define classes css diferenciadas
+      ),
+  ),
+</pre>
+<br /><br />
+<p><strong>Para permitir a seleção de colunas pelo usuário:</strong></p>
+<pre>
+$this->widget('fidelize.grid.FGridView', [
+  'id' => 'ts-acao-trade-grid',
+  'isExportable' => true,
+  'isEditable' => false,
+  'createButtonEnabled' => false,
+  'isDraggable' => true, <--
+</pre>

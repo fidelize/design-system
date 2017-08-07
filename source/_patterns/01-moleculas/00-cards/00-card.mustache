@@ -1,0 +1,22 @@
+<p style="text-align: right;"><a class="mdl-button mdl-js-button mdl-button--primary" href="https://material.io/guidelines/patterns/cards.html" target="_blank">Veja os padrões de cards do MD</a></p>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title">
+	    <h2 class="mdl-card__title-text">{{ heading }}</h2>
+	</div>
+	<div class="mdl-card__supporting-text">
+		{{ text }}
+	</div>
+	<div class="mdl-card__actions {{ cardActionsClass }}">
+		<button class="mdl-button mdl-js-button {{ buttonClass }}">
+		{{ cta }}
+		</button>
+	</div>
+	{{# shareButton}}
+	<div class="mdl-card__menu">
+		<button class="mdl-button mdl-js-button {{ buttonClass }}">
+		{{ cta }}
+		</button>
+	</div>
+	{{/ shareButton}}
+</div>
