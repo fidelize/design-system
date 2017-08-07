@@ -231,7 +231,8 @@ gulp.task('patternlab:connect', gulp.series(function (done) {
     server: {
       baseDir: normalizePath(paths().public.root)
     },
-    port: 8080,
+    port: 80,
+    host: 'https://fidelizedesignguidelines.herokuapp.com',
     snippetOptions: {
       // Ignore all HTML files within the templates folder
       blacklist: ['/index.html', '/', '/?*']
